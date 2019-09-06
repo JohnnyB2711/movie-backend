@@ -1,0 +1,3 @@
+[submodule "laradock-movie"]
+	path = laradock-movie
+	url = git@github.com:JennyjQuery/laradock-movie.git
