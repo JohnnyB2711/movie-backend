@@ -8,7 +8,11 @@ use Illuminate\Http\Request;
 class MoviesController extends Controller {
 
     public function getViewed() {
-        echo 1;
+        return Movie::where('viewed', 1)->paginate(20);
+    }
+
+    public function getPlanned() {
+        return Movie::where('planned', 1)->paginate(20);
     }
 
     public function addViewed(Request $request): Movie {
