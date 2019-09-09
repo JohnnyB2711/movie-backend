@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "4ba71ea4-7e85-467a-b860-6130f0c2e338",
+		"name": "Movie",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Mark movie as planned",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n      \"poster_path\": \"/e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg\",\n      \"adult\": false,\n      \"overview\": \"From DC Comics comes the Suicide Squad, an antihero team of incarcerated supervillains who act as deniable assets for the United States government, undertaking high-risk black ops missions in exchange for commuted prison sentences.\",\n      \"release_date\": \"2016-08-03\",\n      \"genre_ids\": [\n        14,\n        28,\n        80\n      ],\n      \"id\": 2977612,\n      \"original_title\": \"Suicide Squad\",\n      \"original_language\": \"en\",\n      \"title\": \"Suicide Squad\",\n      \"backdrop_path\": \"/ndlQ2Cuc3cjTL7lTynw6I4boP4S.jpg\",\n      \"popularity\": 48.261451,\n      \"vote_count\": 1466,\n      \"video\": false,\n      \"vote_average\": 5.91\n    }"
+				},
+				"url": {
+					"raw": "{{host}}movie/planned",
+					"host": [
+						"{{host}}movie"
+					],
+					"path": [
+						"planned"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mark movie as viewed",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n      \"poster_path\": \"/e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg\",\n      \"adult\": false,\n      \"overview\": \"From DC Comics comes the Suicide Squad, an antihero team of incarcerated supervillains who act as deniable assets for the United States government, undertaking high-risk black ops missions in exchange for commuted prison sentences.\",\n      \"release_date\": \"2016-08-03\",\n      \"genre_ids\": [\n        14,\n        28,\n        80\n      ],\n      \"id\": 2977612,\n      \"original_title\": \"Suicide Squad\",\n      \"original_language\": \"en\",\n      \"title\": \"Suicide Squad\",\n      \"backdrop_path\": \"/ndlQ2Cuc3cjTL7lTynw6I4boP4S.jpg\",\n      \"popularity\": 48.261451,\n      \"vote_count\": 1466,\n      \"video\": false,\n      \"vote_average\": 5.91\n    }"
+				},
+				"url": {
+					"raw": "{{host}}movie/viewed",
+					"host": [
+						"{{host}}movie"
+					],
+					"path": [
+						"viewed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get list of viewed movies",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{host}}movie/viewed",
+					"host": [
+						"{{host}}movie"
+					],
+					"path": [
+						"viewed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get list of planned movies",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{host}}movie/planned",
+					"host": [
+						"{{host}}movie"
+					],
+					"path": [
+						"planned"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
