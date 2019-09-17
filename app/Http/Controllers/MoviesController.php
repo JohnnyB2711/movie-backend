@@ -38,4 +38,22 @@ class MoviesController extends Controller {
 
         return $movie;
     }
+        public function getViewedAndPlanned() {
+            $result = [
+                'planned'=>[],
+                'viewed'=>[]
+            ];
+        $Movies = Movie::all();
+        //$Movies->each(function($movie) use ($result)
+        foreach($Movies as $movie)
+        {
+            //print_r($movie->viewed == 1);
+            if ($movie->viewed == 1) $result['viewed'][]=$movie->external_id;
+            if ($movie->planned == 1) $result['planned'][]=$movie->external_id;
+
+
+        };
+        //die();
+        return $result;
+    }
 }

@@ -21,3 +21,4 @@ Route::get('movie/viewed', 'MoviesController@getViewed');
 Route::get('movie/planned', 'MoviesController@getPlanned');
 Route::post('movie/viewed', 'MoviesController@addViewed');
 Route::post('movie/planned', 'MoviesController@addPlanned');
+Route::get('movie/viewedandplanned', 'MoviesController@getViewedAndPlanned');
