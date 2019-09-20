@@ -14,8 +14,7 @@ class CreateMoviesTable extends Migration
     public function up()
     {
         Schema::create('movies', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('external_id')->unique();
+            $table->integer('id')->primary();
             $table->boolean('adult');
             $table->string('poster_path');
             $table->string('original_title');

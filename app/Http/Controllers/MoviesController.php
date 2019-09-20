@@ -16,25 +16,33 @@ class MoviesController extends Controller {
     }
 
     public function addViewed(Request $request): Movie {
-        $movie = new Movie;
+        $movie = Movie::find($request->post('id'));
+
+        if (!$movie) {
+            $movie = new Movie;
+        }
+
         $movie->fill($request->all());
-        $movie->external_id = $request->post('id');
         $movie->viewed = 1;
         $movie->planned = 0;
 
-        $movie->updateOrCreate();
+        $movie->save();
 
         return $movie;
     }
 
     public function addPlanned(Request $request): Movie {
-        $movie = new Movie;
+        $movie = Movie::find($request->post('id'));
+
+        if (!$movie) {
+            $movie = new Movie;
+        }
+
         $movie->fill($request->all());
-        $movie->external_id = $request->post('id');
         $movie->viewed = 0;
         $movie->planned = 1;
 
-        $movie->updateOrCreate();
+        $movie->save();
 
         return $movie;
     }

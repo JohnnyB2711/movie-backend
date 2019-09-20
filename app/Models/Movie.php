@@ -9,6 +9,7 @@ class Movie extends Model {
     protected $table = 'movies';
 
     protected $fillable = [
+        'id',
         'planned',
         'viewed',
         'poster_path',
@@ -27,28 +28,11 @@ class Movie extends Model {
         'vote_average',
     ];
 
-    protected $hidden = ['external_id'];
-
     public function setGenreIdsAttribute($value) {
         $this->attributes['genre_ids'] = json_encode($value);
     }
 
     public function getGenreIdsAttribute() {
         return json_decode($this->attributes['genre_ids']);
-    }
-
-    public function getIdAttribute() {
-        return $this->attributes['external_id'];
-    }
-
-    public function updateOrCreate() {
-        $movie = self::where('external_id', $this->external_id)->first();
-        if ($movie) {
-            $this->id = $movie->id;
-            $this->update();
-        } else {
-            $this->save();
-        }
-        return $movie;
     }
 }
